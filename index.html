@@ -3,121 +3,323 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mother Coins | The Future of Crypto</title>
+<meta name="theme-color" content="#081321">
+<meta name="description" content="Mother Coins explores the future of digital finance, with Cardano at the center of a connected blockchain and AI ecosystem.">
+<title>Mother Coins | A Cardano-Centered Digital Future</title>
 
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+:root {
+--bg: #081321;
+--panel: #101f32;
+--panel-light: #172a41;
+--gold: #e8bd68;
+--gold-light: #f5d99b;
+--white: #f7f8fb;
+--muted: #a9b6c8;
+--green: #65d69a;
+--red: #ff8585;
+--border: rgba(255,255,255,.10);
 }
 
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-font-family: Arial, sans-serif;
-background: #080d1b;
-color: white;
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: var(--bg);
+color: var(--white);
+line-height: 1.6;
+}
+
+a { color: inherit; }
+
+.container {
+width: min(1120px, 90%);
+margin: auto;
 }
 
 header {
-padding: 25px 8%;
+position: sticky;
+top: 0;
+z-index: 10;
+background: rgba(8,19,33,.94);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(--border);
+}
+
+.nav {
+min-height: 76px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-border-bottom: 1px solid #202b43;
+gap: 20px;
 }
 
-.logo {
-font-size: 27px;
-font-weight: bold;
-color: #e7bd63;
+.brand {
+color: var(--gold);
+font-size: 24px;
+font-weight: 800;
+letter-spacing: 2px;
+text-decoration: none;
+}
+
+nav {
+display: flex;
+gap: 25px;
 }
 
 nav a {
-color: white;
+color: var(--muted);
 text-decoration: none;
-margin-left: 25px;
+font-size: 14px;
 }
+
+nav a:hover { color: var(--gold); }
 
 .hero {
-min-height: 75vh;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+padding: 105px 0 90px;
 text-align: center;
-padding: 60px 20px;
-background: radial-gradient(circle, #17294a, #080d1b 70%);
+background:
+radial-gradient(ellipse at 50% 0%, #1d3d60 0%, transparent 65%),
+var(--bg);
 }
 
-.hero h1 {
+.eyebrow {
+color: var(--gold);
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+
+h1 {
 font-size: clamp(42px, 7vw, 76px);
-margin-bottom: 25px;
+line-height: 1.08;
+margin: 20px 0;
+letter-spacing: -2px;
 }
 
-.hero h1 span {
-color: #e7bd63;
-}
+h1 span, .gold { color: var(--gold); }
 
 .hero p {
-font-size: 19px;
-line-height: 1.7;
-max-width: 650px;
-color: #bdc8dc;
+max-width: 690px;
+margin: 0 auto;
+color: var(--muted);
+font-size: 18px;
 }
 
 .button {
 display: inline-block;
-margin-top: 35px;
-padding: 16px 35px;
-background: #e7bd63;
-color: #080d1b;
+margin-top: 30px;
+padding: 14px 26px;
+border-radius: 7px;
+background: var(--gold);
+color: #101827;
 text-decoration: none;
 font-weight: bold;
-border-radius: 7px;
+transition: .2s;
 }
 
-section {
-padding: 75px 10%;
+.button:hover {
+background: var(--gold-light);
+transform: translateY(-2px);
+}
+
+section { padding: 75px 0; }
+
+.section-heading {
 text-align: center;
+margin-bottom: 35px;
 }
 
-section h2 {
-font-size: 36px;
-color: #e7bd63;
-margin-bottom: 25px;
+.section-heading h2 {
+font-size: clamp(28px, 4vw, 40px);
+margin: 8px 0;
 }
 
-section p {
-color: #bdc8dc;
-line-height: 1.8;
-max-width: 750px;
+.section-heading p {
+color: var(--muted);
+margin: 0 auto;
+max-width: 620px;
+}
+
+.featured {
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+gap: 35px;
+padding: 35px;
+background: linear-gradient(135deg, #183553, #102035);
+border: 1px solid rgba(232,189,104,.35);
+border-radius: 18px;
+}
+
+.featured-label {
+color: var(--gold);
+font-size: 12px;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+.featured h3 {
+font-size: 34px;
+margin: 12px 0;
+}
+
+.featured p { color: var(--muted); }
+
+.ada-symbol {
+width: 112px;
+height: 112px;
+display: grid;
+place-items: center;
+margin: auto;
+border: 2px solid var(--gold);
+border-radius: 50%;
+color: var(--gold);
+font-size: 38px;
+font-weight: bold;
+box-shadow: 0 0 45px rgba(232,189,104,.12);
+}
+
+.ada-price {
+font-size: clamp(32px, 5vw, 48px);
+font-weight: bold;
+margin-top: 15px;
+overflow-wrap: anywhere;
+}
+
+.change {
+font-size: 15px;
+font-weight: bold;
+}
+
+.positive { color: var(--green); }
+.negative { color: var(--red); }
+
+.market-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 16px;
+}
+
+.coin-card {
+padding: 23px;
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 13px;
+}
+
+.coin-card h3 {
+margin: 0 0 15px;
+font-size: 17px;
+}
+
+.coin-price {
+font-size: 25px;
+font-weight: bold;
+overflow-wrap: anywhere;
+}
+
+.coin-change {
+margin-top: 5px;
+font-size: 13px;
+}
+
+.market-note {
+text-align: center;
+color: var(--muted);
+font-size: 12px;
+margin-top: 22px;
+}
+
+.status {
+color: var(--muted);
+font-size: 12px;
+text-align: center;
+margin-top: 12px;
+}
+
+.vision {
+background: #0c1929;
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+}
+
+.vision-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.vision-card {
+padding: 27px;
+background: var(--panel);
+border: 1px solid var(--border);
+border-radius: 13px;
+}
+
+.vision-card .number {
+color: var(--gold);
+font-size: 13px;
+letter-spacing: 2px;
+}
+
+.vision-card h3 { margin-bottom: 8px; }
+
+.vision-card p {
+color: var(--muted);
+font-size: 14px;
+}
+
+.closing {
+text-align: center;
+padding: 85px 0;
+}
+
+.closing h2 {
+font-size: clamp(30px, 5vw, 46px);
+margin: 0 0 15px;
+}
+
+.closing p {
+color: var(--muted);
+max-width: 650px;
 margin: auto;
 }
 
-.features {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 25px;
-margin-top: 45px;
-}
-
-.feature {
-background: #121d32;
-padding: 35px 20px;
-border: 1px solid #293956;
-border-radius: 12px;
-}
-
-.feature h3 {
-color: #e7bd63;
-margin-bottom: 15px;
-}
-
 footer {
+border-top: 1px solid var(--border);
+padding: 28px 0;
 text-align: center;
-padding: 35px;
-color: #8b9ab2;
-border-top: 1px solid #202b43;
+color: var(--muted);
+font-size: 12px;
+}
+
+@media (max-width: 700px) {
+.nav {
+flex-direction: column;
+padding: 17px 0;
+}
+
+nav { gap: 17px; }
+
+.hero { padding: 75px 0; }
+
+.featured {
+grid-template-columns: 1fr;
+text-align: center;
+padding: 25px;
+}
+
+.market-grid,
+.vision-grid {
+grid-template-columns: 1fr;
+}
+
+section { padding: 55px 0; }
 }
 </style>
 </head>
@@ -125,71 +327,253 @@ border-top: 1px solid #202b43;
 <body>
 
 <header>
-<div class="logo">MOTHER COINS</div>
-<nav>
-<a href="#about">About</a>
-<a href="#technology">Technology</a>
+<div class="container nav">
+<a class="brand" href="#">MOTHER COINS</a>
+<nav aria-label="Main navigation">
+<a href="#cardano">Cardano</a>
+<a href="#market">Market</a>
 <a href="#vision">Our Vision</a>
 </nav>
+</div>
 </header>
 
-<div class="hero">
-<h1>The Future of <span>Digital Currency</span></h1>
-<p>
-One platform. Multiple blockchains.
-Artificial intelligence connecting the
-world of cryptocurrency.
-</p>
-<a href="#about" class="button">Discover Mother Coins</a>
-</div>
+<main>
 
-<section id="about">
-<h2>Welcome to Mother Coins</h2>
+<section class="hero">
+<div class="container">
+<div class="eyebrow">A New Digital Finance Vision</div>
+<h1>The Future Starts<br>With <span>Cardano.</span></h1>
 <p>
-Mother Coins is an ambitious digital platform
-designed to bring cryptocurrency ecosystems
-together through innovative artificial
-intelligence and blockchain technology.
+Mother Coins is building a vision for a connected digital world,
+bringing blockchain technology, cryptocurrency, and artificial
+intelligence into one ambitious ecosystem.
 </p>
+<a class="button" href="#cardano">Discover Mother Coins</a>
+</div>
 </section>
 
-<section id="technology">
-<h2>Our Technology</h2>
+<section id="cardano">
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Our Primary Focus</div>
+<h2>Cardano at the Center</h2>
+<p>
+Cardano is the starting point of the Mother Coins vision.
+We believe in exploring the possibilities of a more connected
+blockchain future.
+</p>
+</div>
 
-<div class="features">
-<div class="feature">
+<div class="featured">
+<div>
+<div class="featured-label">CARDANO · ADA · USD</div>
+<h3>The Cardano Ecosystem</h3>
+<p>
+A blockchain-focused foundation for exploring innovation,
+digital assets, and the next generation of decentralized technology.
+</p>
+<div class="ada-price" id="ada-price">Loading price...</div>
+<div class="change" id="ada-change">Loading 24-hour change...</div>
+</div>
+<div class="ada-symbol" aria-label="ADA symbol">ADA</div>
+</div>
+</div>
+</section>
+
+<section id="market">
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Digital Asset Overview</div>
+<h2>Explore the Market</h2>
+<p>
+Follow selected digital currencies alongside our primary focus,
+Cardano.
+</p>
+</div>
+
+<div class="market-grid">
+<article class="coin-card">
+<h3>₿ Bitcoin · BTC</h3>
+<div class="coin-price" id="bitcoin-price">Loading...</div>
+<div class="coin-change" id="bitcoin-change"></div>
+</article>
+
+<article class="coin-card">
+<h3>◆ Ethereum · ETH</h3>
+<div class="coin-price" id="ethereum-price">Loading...</div>
+<div class="coin-change" id="ethereum-change"></div>
+</article>
+
+<article class="coin-card">
+<h3>◎ Solana · SOL</h3>
+<div class="coin-price" id="solana-price">Loading...</div>
+<div class="coin-change" id="solana-change"></div>
+</article>
+
+<article class="coin-card">
+<h3>XRP</h3>
+<div class="coin-price" id="ripple-price">Loading...</div>
+<div class="coin-change" id="ripple-change"></div>
+</article>
+
+<article class="coin-card">
+<h3>Ð Dogecoin · DOGE</h3>
+<div class="coin-price" id="dogecoin-price">Loading...</div>
+<div class="coin-change" id="dogecoin-change"></div>
+</article>
+</div>
+
+<div class="status" id="market-status" aria-live="polite">
+Connecting to market data...
+</div>
+<p class="market-note">
+Prices are informational, may be delayed, and are not investment advice.
+Data is provided by CoinGecko.
+</p>
+</div>
+</section>
+
+<section class="vision" id="vision">
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">What We Believe</div>
+<h2>The Mother Coins Vision</h2>
+<p>
+A long-term vision exploring how different technologies
+could work together in the digital economy.
+</p>
+</div>
+
+<div class="vision-grid">
+<article class="vision-card">
+<div class="number">01 / FOUNDATION</div>
+<h3>Cardano First</h3>
+<p>
+Making Cardano our primary focus as we explore blockchain
+technology and its potential.
+</p>
+</article>
+
+<article class="vision-card">
+<div class="number">02 / INTELLIGENCE</div>
 <h3>Artificial Intelligence</h3>
-<p>Intelligent tools designed to help connect
-and analyze digital asset ecosystems.</p>
-</div>
-
-<div class="feature">
-<h3>Cardano Blockchain</h3>
-<p>Building our initial blockchain foundation
-around Cardano technology.</p>
-</div>
-
-<div class="feature">
-<h3>Multi-Coin Vision</h3>
-<p>A vision to connect multiple cryptocurrency
-networks in one ecosystem.</p>
-</div>
-</div>
-</section>
-
-<section id="vision">
-<h2>One Vision. A Connected Future.</h2>
 <p>
-We believe the future of cryptocurrency
-is collaboration, intelligence, and
-connectivity across blockchain networks.
-Mother Coins is building toward that future.
+Exploring AI-powered tools that could help people understand
+and navigate digital assets.
 </p>
+</article>
+
+<article class="vision-card">
+<div class="number">03 / CONNECTION</div>
+<h3>A Connected Ecosystem</h3>
+<p>
+Exploring ways to bring information and opportunities
+from multiple blockchain networks together.
+</p>
+</article>
+</div>
+</div>
 </section>
+
+<section class="closing">
+<div class="container">
+<div class="eyebrow">The Beginning</div>
+<h2>One Vision. Many Possibilities.</h2>
+<p>
+Mother Coins is an evolving project focused on the possibilities
+of blockchain, Cardano, and artificial intelligence.
+</p>
+<a class="button" href="#cardano">Explore the Vision</a>
+</div>
+</section>
+
+</main>
 
 <footer>
-© 2026 Mother Coins. All Rights Reserved.
+<div class="container">
+© 2026 Mother Coins. All rights reserved.
+</div>
 </footer>
+
+<script>
+const coinIds = ["cardano", "bitcoin", "ethereum", "solana", "ripple", "dogecoin"];
+
+function formatPrice(value) {
+return new Intl.NumberFormat("en-US", {
+style: "currency",
+currency: "USD",
+maximumFractionDigits: value < 1 ? 6 : 2
+}).format(value);
+}
+
+function showChange(element, value) {
+const positive = value >= 0;
+element.textContent =
+(positive ? "+" : "") + value.toFixed(2) + "% over 24 hours";
+element.className = "coin-change " + (positive ? "positive" : "negative");
+}
+
+async function loadMarket() {
+const status = document.getElementById("market-status");
+
+try {
+const url =
+"https://api.coingecko.com/api/v3/simple/price?ids=" +
+coinIds.join(",") +
+"&vs_currencies=usd&include_24hr_change=true";
+
+const response = await fetch(url);
+
+if (!response.ok) {
+throw new Error("Market service temporarily unavailable");
+}
+
+const data = await response.json();
+
+coinIds.forEach(id => {
+if (!data[id] || typeof data[id].usd !== "number") {
+throw new Error("Incomplete market data");
+}
+});
+
+document.getElementById("ada-price").textContent =
+formatPrice(data.cardano.usd);
+
+const adaChange = document.getElementById("ada-change");
+const adaValue = data.cardano.usd_24h_change;
+
+adaChange.textContent =
+(adaValue >= 0 ? "+" : "") + adaValue.toFixed(2) +
+"% over 24 hours";
+adaChange.className =
+"change " + (adaValue >= 0 ? "positive" : "negative");
+
+["bitcoin", "ethereum", "solana", "ripple", "dogecoin"].forEach(id => {
+document.getElementById(id + "-price").textContent =
+formatPrice(data[id].usd);
+
+const change = data[id].usd_24h_change;
+const element = document.getElementById(id + "-change");
+
+if (typeof change === "number") {
+showChange(element, change);
+} else {
+element.textContent = "24-hour change unavailable";
+}
+});
+
+status.textContent =
+"Market data updated at " + new Date().toLocaleTimeString();
+
+} catch (error) {
+status.textContent =
+"Market data is temporarily unavailable. Please try again later.";
+}
+}
+
+loadMarket();
+setInterval(loadMarket, 60000);
+</script>
 
 </body>
 </html>
